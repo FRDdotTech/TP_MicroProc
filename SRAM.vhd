@@ -1,0 +1,203 @@
+
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+entity sram_e is
+	port (
+		CLK, WR : in std_logic:='0';
+		addr : in std_logic_vector(6 downto 0):=b"0000000";
+		data : in std_logic_vector(8 downto 0):=b"000000000";
+		Q : out std_logic_vector(8 downto 0):= b"000000000"
+	);
+end entity;
+
+architecture sram_a of sram_e is
+	type mem_t is array (0 to 127) of std_logic_vector(8 downto 0);
+	signal mem : mem_t := (
+		b"001001000",	-- movi
+		b"001010000",	-- movi
+		b"001011000",	-- movi
+		b"001100000",	-- movi
+		b"001101000",	-- movi
+		b"001110000",	-- movi
+		b"001111000",	-- movi
+		b"000111001",	-- mov
+		b"010110010",	-- add
+		b"010110010",	
+		b"011101011",	-- sub
+		b"011101011",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"001001000",	-- movi
+		b"001010000",	-- movi
+		b"001011000",	-- movi
+		b"001100000",	-- movi
+		b"001101000",	-- movi
+		b"001110000",	-- movi
+		b"001111000",	-- movi
+		b"000111001",	-- mov
+		b"010110010",	-- add
+		b"010110010",	
+		b"011101011",	-- sub
+		b"011101011",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"001001000",	-- movi
+		b"001010000",	-- movi
+		b"001011000",	-- movi
+		b"001100000",	-- movi
+		b"001101000",	-- movi
+		b"001110000",	-- movi
+		b"001111000",	-- movi
+		b"000111001",	-- mov
+		b"010110010",	-- add
+		b"010110010",	
+		b"011101011",	-- sub
+		b"011101011",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"001001000",	-- movi
+		b"001010000",	-- movi
+		b"001011000",	-- movi
+		b"001100000",	-- movi
+		b"001101000",	-- movi
+		b"001110000",	-- movi
+		b"001111000",	-- movi
+		b"000111001",	-- mov
+		b"010110010",	-- add
+		b"010110010",	
+		b"011101011",	-- sub
+		b"011101011",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000",
+		b"000000000");
+
+	
+	
+begin
+	
+	process (CLK)
+		variable prev_addr :  std_logic_vector(6 downto 0):= b"0000000";
+	begin
+	if rising_edge (CLK) then
+		if WR = '1' then
+			mem(to_integer(unsigned(addr))) <= data;
+		else
+			Q <= mem(to_integer(unsigned(addr)));
+		end if;
+	end if;
+	end process;
+end architecture;
+
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+entity sram_bench_e is
+end entity;
+
+architecture sram_bench_a of sram_bench_e is
+	component sram_e is
+		port (
+		CLK, WR : in std_logic:='0';
+		addr : in std_logic_vector(6 downto 0);
+		data : in std_logic_vector(8 downto 0);
+		Q : out std_logic_vector(8 downto 0)
+	);
+	end component;
+
+	component PC_e is
+		port (
+		CLK, Rin, En : in std_logic:='0';
+		PCin : in std_logic_vector(8 downto 0);
+		Q : out std_logic_vector(8 downto 0)
+	);
+	end component;
+	
+	signal T_CLK, T_WR, T_Rin : std_logic:='0';
+	signal T_addr : std_logic_vector(8 downto 0);
+	signal T_Q : std_logic_vector(8 downto 0);
+	signal T_En : std_logic:='1';
+	signal T_In : std_logic_vector(8 downto 0):=b"000001001";
+	signal T_Dout: std_logic_vector(8 downto 0):=b"000000001";
+begin
+	T_CLK	<= not(T_CLK) after 5 ns;
+	T_WR	<= '1' after 163 ns, '0' after 168 ns;
+	T_Rin 	<= '1' after 173 ns, '0' after 178 ns;
+	cnt	: entity work.PC_e(PC_a) port map(T_CLK, T_Rin, T_En, T_In, T_addr);
+	sram	: entity work.sram_e(sram_a) port map(T_CLK, T_WR, T_addr(6 downto 0), T_Dout, T_Q);
+end architecture;

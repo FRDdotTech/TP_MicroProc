@@ -1,0 +1,129 @@
+
+
+-- TEST BENCH
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+
+entity bench_V2_e is 
+end entity;
+
+architecture bench_Version2_a of bench_V2_e is 
+--
+--
+--	FSM
+--
+--
+	component FSM_e is
+		port (
+		DIN : in std_logic_vector(8 downto 0);
+		CLK, RST, RUN : in std_logic;
+		SEL : out std_logic_vector(9 downto 0):=B"0000000000";
+		IRin, AddSub, Gin, Ain, Done : out std_logic;
+		R0, R1, R2, R3, R4, R5, R6, R7 : out std_logic
+	);
+	end component;
+--
+--
+--	MUX
+--
+--
+	component mux_e is
+		port (
+		R0, R1, R2, R3, R4, R5, R6, R7, Din, G : in std_logic_vector(8 downto 0);
+		SEL : in std_logic_vector(9 downto 0);
+		S : out std_logic_vector(8 downto 0)
+	);
+	end component;
+--
+--
+--	REG
+--
+--
+	component register_e is
+		port (
+		CLK, Rin : in std_logic:='0';
+		R : in std_logic_vector(8 downto 0);
+		Q : out std_logic_vector(8 downto 0)
+	);
+	end component;
+
+
+--
+--
+--	ALU
+--
+--
+	component alu_e is
+		port (
+		AddSub : in std_logic:='0';
+		A, B : in std_logic_vector(8 downto 0);
+		S : out std_logic_vector(8 downto 0)
+	);
+	end component;
+	
+
+--
+--
+--	COUNTER
+--
+--
+	component counter_e is
+		port (
+		CLK, RST : in std_logic:='0';
+		Q : out std_logic_vector(4 downto 0)
+	);
+	end component;
+
+--
+--
+--	ROM
+--
+--
+	component rom_e is
+		port (
+		CLK : in std_logic:='0';
+		addr : in std_logic_vector(4 downto 0);
+		data : out std_logic_vector(8 downto 0)
+	);
+	end component;
+
+	signal DIN, IR_Q, ComonBus, ALU_A, ALU_S : std_logic_vector(8 downto 0) := B"000000000";
+	signal R0_Q, R1_Q, R2_Q, R3_Q, R4_Q, R5_Q, R6_Q, R7_Q, G_Q: std_logic_vector(8 downto 0) := B"000000000";
+	signal T_CLK, T_RST, T_RUN : std_logic:='0';
+	signal MUX_SEL : std_logic_vector(9 downto 0);
+	signal IRin, AddSub, Gin, Ain, Done : std_logic;
+	signal R0_in, R1_in, R2_in, R3_in, R4_in, R5_in, R6_in, R7_in : std_logic;
+	signal T_addr : std_logic_vector(4 downto 0);
+	
+
+
+begin
+	T_RST <= '1' after 1 ns, '0' after 13 ns;
+	T_CLK <= not(T_CLK) after 5 ns;
+
+--
+--
+--	ENTITY INSTANCES
+--
+--
+	IRreg 	: entity work.register_e(register_a) port map(T_CLK, IRin, DIN, IR_Q);
+	FSM 	: entity work.FSM_e(FSM_a) port map(IR_Q, T_CLK, T_RST, T_RUN, MUX_SEL, IRin, AddSub, Gin, Ain, Done, R0_in, R1_in, R2_in, R3_in, R4_in, R5_in, R6_in, R7_in);
+	ALU	: entity work.alu_e(alu_a) port map (AddSub, ALU_A, ComonBus,  ALU_S);
+	MUX	: entity work.mux_e(mux_a) port map (R0_Q, R1_Q, R2_Q, R3_Q, R4_Q, R5_Q, R6_Q, R7_Q, DIN, G_Q, MUX_SEL, ComonBus);
+	AReg	: entity work.register_e(register_a) port map(T_CLK, Ain, ComonBus, ALU_A);
+	GReg	: entity work.register_e(register_a) port map(T_CLK, Gin, ALU_S, G_Q);
+	R0_Reg	: entity work.register_e(register_a) port map(T_CLK, R0_in, ComonBus, R0_Q);
+	R1_Reg	: entity work.register_e(register_a) port map(T_CLK, R1_in, ComonBus, R1_Q);
+	R2_Reg	: entity work.register_e(register_a) port map(T_CLK, R2_in, ComonBus, R2_Q);
+	R3_Reg	: entity work.register_e(register_a) port map(T_CLK, R3_in, ComonBus, R3_Q);
+	R4_Reg	: entity work.register_e(register_a) port map(T_CLK, R4_in, ComonBus, R4_Q);
+	R5_Reg	: entity work.register_e(register_a) port map(T_CLK, R5_in, ComonBus, R5_Q);
+	R6_Reg	: entity work.register_e(register_a) port map(T_CLK, R6_in, ComonBus, R6_Q);
+	R7_Reg	: entity work.register_e(register_a) port map(T_CLK, R7_in, ComonBus, R7_Q);
+-- V2 specific
+	counter : entity work.counter_e(counter_a) port map(T_CLK, T_RST, T_addr);
+	rom	: entity work.rom_e(rom_a) port map(T_CLK, T_addr, DIN);
+end architecture;

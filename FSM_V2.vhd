@@ -1,0 +1,218 @@
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+entity FSMV2_e is
+	port (
+		DIN : in std_logic_vector(8 downto 0);
+		CLK, RST, RUN : in std_logic;
+		SEL : out std_logic_vector(9 downto 0):=B"0000000000";
+		IRin, AddSub, Gin, Ain, Done : out std_logic;
+		R0, R1, R2, R3, R4, R5, R6, R7 : out std_logic := '0';
+		PC_En, ADDRin, DOUTin, W_D: out std_logic := '0'
+	);
+end entity;
+
+architecture FSMV2_a of FSMV2_e is
+	type state_t is (S0, S1, S2, S3);
+	signal current_state, next_state : state_t := S0;
+	constant PC_select : integer:= 7;
+
+	procedure RegInSelect (	constant  Rin : in integer;
+				signal R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out : out std_logic) is 
+		BEGIN
+		case Rin is 
+			when 0 => R0out <= '1';
+			when 1 => R1out <= '1';
+			when 2 => R2out <= '1';
+			when 3 => R3out <= '1';
+			when 4 => R4out <= '1';
+			when 5 => R5out <= '1';
+			when 6 => R6out <= '1';
+			when 7 => R7out <= '1';
+			when others => 
+				R0out<= '0';
+				R1out<= '0';
+				R2out<= '0';
+				R3out<= '0';
+				R4out<= '0';
+				R5out<= '0';
+				R6out<= '0';
+				R7out<= '0';
+		end case;
+	end RegInSelect;
+	
+	procedure MuxSelect (	constant Rout, Dout, Gout : in integer;
+				signal SEL : out std_logic_vector(9 downto 0)) is 
+		BEGIN
+		SEL <= B"0000000000";
+		if Dout = 1 then SEL <= B"0000000010";
+		elsif Gout = 1 then SEL <= B"0000000001";
+		else SEL(9 - Rout) <= '1';	-- because muxSel is R0->R7->Dout->Gout
+		end if;
+		
+	end MuxSelect;
+		
+begin
+	process (CLK, RST)
+		variable cmd : integer:=0;
+	begin
+	if RST = '1' then 
+		current_state <= S0; 
+		next_state <= S0;
+	elsif rising_edge (CLK) then
+		current_state <= next_state;
+		end if;
+	case current_state is
+		when S0 =>
+			if RUN = '0' then next_state <= S1;
+			else next_state <= S0;
+			end if;
+		when S1 =>
+			cmd := to_integer(unsigned(Din(8 downto 6)));
+			if cmd > 1 then next_state <= S2;
+			else next_state <= S0;
+			end if;
+		when S2 =>
+			if cmd > 1 then next_state <= S3;
+			else next_state <= S0;
+			end if;
+		when others =>
+			next_state <= S0;
+	end case;
+	end process;
+
+	
+
+
+
+	process (current_state, Din)
+		variable cmd, Rin, Rout : integer:=0;
+		begin
+			case current_state is
+				when S0 =>
+					Done <= '0';
+					cmd := 0;
+					Rin := 0;
+					Rout := 0;
+					IRin <= '1';
+					ADDRin <= '1';
+					PC_En <= '0';
+					MuxSelect(PC_select, 0, 0, Sel);	--select PC in Mux 
+					RegInSelect(8, R0, R1, R2, R3, R4, R5, R6, R7);	-- reset all reg_in
+				when S1 =>
+					cmd := to_integer(unsigned(Din(8 downto 6)));
+					Rin := to_integer(unsigned(Din(5 downto 3)));
+					Rout := to_integer(unsigned(Din(2 downto 0)));
+					IRin <= '0';
+					ADDRin <= '0';
+					case cmd is 
+					when 0 =>
+						MuxSelect(Rout, 0, 0, Sel);
+						RegInSelect(Rin, R0, R1, R2, R3, R4, R5, R6, R7);
+						Done <= '1';
+						PC_En <= '1';
+					when 1 =>
+						MuxSelect(Rout, 1, 0, Sel);
+						RegInSelect(Rin, R0, R1, R2, R3, R4, R5, R6, R7);
+						Done <= '1';
+						PC_En <= '1';
+					when 2 =>
+						MuxSelect(Rin, 0, 0, Sel);
+						Ain <= '1';
+					when 3 =>
+						MuxSelect(Rin, 0, 0, Sel);
+						Ain <= '1';
+					when others =>
+						null;
+					end case;
+				when S2 =>
+					case cmd is 
+					when 2 =>
+						Ain <= '0';
+						MuxSelect(Rout, 0, 0, Sel);
+						Gin <= '1';
+						AddSub <= '0';
+					when 3 =>
+						Ain <= '0';
+						MuxSelect(Rout, 0, 0, Sel);
+						Gin <= '1';
+						AddSub <= '1';
+					when others =>
+						null;
+						end case;
+				when S3 =>
+					MuxSelect(Rout, 0, 1, Sel);	-- target Gout
+					PC_En <= '1';
+					Done <= '1';
+					RegInSelect(Rin, R0, R1, R2, R3, R4, R5, R6, R7);
+				when others =>
+					null;
+			end case;
+	end process;
+end architecture;
+
+
+
+-- TEST BENCH
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.numeric_std.all;
+
+
+entity FSMV2_bench_e is 
+end entity;
+
+architecture FSMV2_bench_a of FSMV2_bench_e is 
+--
+--
+--	FSMV2
+--
+--
+	component FSMV2_e is
+		port (
+		DIN : in std_logic_vector(8 downto 0);
+		CLK, RST, RUN : in std_logic;
+		SEL : out std_logic_vector(9 downto 0);
+		IRin, AddSub, Gin, Ain, Done : out std_logic;
+		R0, R1, R2, R3, R4, R5, R6, R7 : out std_logic;
+		PC_En, ADDRin, DOUTin, W_D: out std_logic
+	);
+	end component;
+
+	
+	signal DIN, IR_Q, ComonBus, ALU_A, ALU_S : std_logic_vector(8 downto 0) := B"000000000";
+	signal R0_Q, R1_Q, R2_Q, R3_Q, R4_Q, R5_Q, R6_Q, R7_Q, G_Q: std_logic_vector(8 downto 0) := B"000000000";
+	signal T_CLK, T_RST, T_RUN : std_logic:='0';
+	signal MUX_SEL : std_logic_vector(9 downto 0);
+	signal IRin, AddSub, Gin, Ain, Done : std_logic;
+	signal R0_in, R1_in, R2_in, R3_in, R4_in, R5_in, R6_in, R7_in : std_logic;
+	signal T_PC_En, T_ADDRin, T_DOUTin, T_W_D: std_logic;
+	
+
+begin
+	T_RST <= '1' after 1 ns, '0' after 13 ns, '1' after 257 ns;
+	DIN <=	B"001001000" after 1 ns, 	-- reg_1 = DIN
+		B"001010000" after 27 ns,  	-- reg_2 = DIN
+		B"001011000" after 47 ns,  	-- reg_3 = DIN
+		B"001100000" after 67 ns,  	-- reg_4 = DIN
+		B"001101000" after 87 ns,  	-- reg_5 = DIN
+		B"001110000" after 107 ns,  	-- reg_6 = DIN
+		B"001111000" after 127 ns,  	-- reg_7 = DIN
+		B"000111001" after 147 ns,  	-- mov : reg_7 = reg_0
+		B"010110010" after 167 ns,  	-- add : reg_6 = reg_6 + reg_2
+		B"011101011" after 207 ns;  	-- add : reg_5 = reg_5 - reg_3
+	IR_Q <= b"000101010" after 1 ns;
+	T_CLK <= not(T_CLK) after 5 ns;
+
+--
+--
+--	ENTITY INSTANCES
+--
+--
+	FSM 	: entity work.FSMV2_e(FSMV2_a) port map(IR_Q, T_CLK, T_RST, T_RUN, MUX_SEL, IRin, AddSub, Gin, Ain, Done, R0_in, R1_in, R2_in, R3_in, R4_in, R5_in, R6_in, R7_in, T_PC_En,  T_ADDRin, T_DOUTin, T_W_D);
+	
+
+end architecture;

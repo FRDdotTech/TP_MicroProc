@@ -1,0 +1,463 @@
+# Compile of FSM.vhd was successful.
+vsim -gui work.bench_fsm_e -t ns
+# vsim -gui work.bench_fsm_e -t ns 
+# Start time: 08:09:10 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.register_e(register_a)
+# Loading work.fsm_e(fsm_a)
+# Loading work.alu_e(alu_a)
+# Loading work.mux_e(mux_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/bench_fsm_e/FSM/current_state
+add wave -position insertpoint  \
+sim:/bench_fsm_e/DIN
+add wave -position insertpoint  \
+sim:/bench_fsm_e/ComonBus
+add wave -position insertpoint  \
+sim:/bench_fsm_e/ALU_A \
+sim:/bench_fsm_e/ALU_B \
+sim:/bench_fsm_e/ALU_S
+add wave -position insertpoint  \
+sim:/bench_fsm_e/R0_Q \
+sim:/bench_fsm_e/R1_Q \
+sim:/bench_fsm_e/R2_Q \
+sim:/bench_fsm_e/R3_Q
+add wave -position insertpoint  \
+sim:/bench_fsm_e/R0_in \
+sim:/bench_fsm_e/R1_in \
+sim:/bench_fsm_e/R2_in \
+sim:/bench_fsm_e/R3_in
+run 150 ns
+add wave -position insertpoint  \
+sim:/bench_fsm_e/R4_in \
+sim:/bench_fsm_e/R5_in \
+sim:/bench_fsm_e/R6_in \
+sim:/bench_fsm_e/R7_in
+add wave -position insertpoint  \
+sim:/bench_fsm_e/R4_Q \
+sim:/bench_fsm_e/R5_Q \
+sim:/bench_fsm_e/R6_Q \
+sim:/bench_fsm_e/R7_Q
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+add wave -position insertpoint  \
+sim:/bench_fsm_e/MUX_SEL
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# Compile of FSM.vhd failed with 2 errors.
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# ** Fatal: (vsim-3483) Delay in signal assignment is not ascending.
+#    Time: 0 ns  Iteration: 0  Process: /bench_fsm_e/line__220 File: U:/TP_VHDL/TP_MicroProc/FSM.vhd Line: 228
+# Fatal error in Architecture bench_FSM_a at U:/TP_VHDL/TP_MicroProc/FSM.vhd line 228
+# 
+# HDL call sequence:
+# Stopped at U:/TP_VHDL/TP_MicroProc/FSM.vhd 228 Architecture bench_FSM_a
+# 
+run 200 ns
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at U:/TP_VHDL/TP_MicroProc/FSM.vhd 228 Architecture bench_FSM_a
+# 
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+# ** Fatal: (vsim-3483) Delay in signal assignment is not ascending.
+#    Time: 0 ns  Iteration: 0  Process: /bench_fsm_e/line__220 File: U:/TP_VHDL/TP_MicroProc/FSM.vhd Line: 228
+# Fatal error in Architecture bench_FSM_a at U:/TP_VHDL/TP_MicroProc/FSM.vhd line 228
+# 
+# HDL call sequence:
+# Stopped at U:/TP_VHDL/TP_MicroProc/FSM.vhd 228 Architecture bench_FSM_a
+# 
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 200 ns
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 300 ns
+# Compile of FSM.vhd was successful.
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+# Warning in wave window restart: (vish-4014) No objects found matching '/bench_fsm_e/ALU_B'. 
+add wave -position insertpoint  \
+sim:/bench_fsm_e/ALU/B
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 300 ns
+# Compile of FSM.vhd failed with 2 errors.
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 300 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+# ** Warning: (vsim-8683) Uninitialized out port /bench_fsm_e/FSM/Done has no driver.
+# This port will contribute value (U) to the signal network.
+run 300 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+run 300 ns
+# Compile of FSM.vhd was successful.
+restart
+# Loading work.bench_fsm_e(bench_fsm_a)
+# Loading work.fsm_e(fsm_a)
+run 300 ns
+add wave -position insertpoint  \
+sim:/bench_fsm_e/T_CLK
+restart
+run 300 ns
+add wave -position insertpoint  \
+sim:/bench_fsm_e/G_Q
+restart
+run 300 ns
+add wave -position insertpoint  \
+sim:/bench_fsm_e/Done
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 4 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of alu.vhd was successful.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of counter.vhd was successful.
+# Compile of counter.vhd failed with 2 errors.
+# Compile of FSM.vhd was successful.
+# Compile of counter.vhd was successful.
+quit -sim
+# End time: 09:15:35 on Dec 15,2025, Elapsed time: 1:06:25
+# Errors: 6, Warnings: 15
+vsim -gui -t ns work.counter_bench_e
+# vsim -gui -t ns work.counter_bench_e 
+# Start time: 09:15:45 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.counter_bench_e(counter_bench_a)
+# Loading work.counter_e(counter_a)
+add wave -position insertpoint  \
+sim:/counter_bench_e/T_CLK \
+sim:/counter_bench_e/T_RST \
+sim:/counter_bench_e/T_Q
+run 300 ns
+# Compile of counter.vhd was successful.
+restart 
+# Loading work.counter_bench_e(counter_bench_a)
+# Loading work.counter_e(counter_a)
+run 300 ns
+# Compile of rom.vhd failed with 4 errors.
+# Compile of rom.vhd failed with 4 errors.
+# Compile of rom.vhd failed with 4 errors.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd was successful.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd was successful.
+# Compile of rom.vhd was successful.
+# Compile of rom.vhd failed with 3 errors.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd was successful.
+quit -sim
+# End time: 09:37:07 on Dec 15,2025, Elapsed time: 0:21:22
+# Errors: 0, Warnings: 0
+vsim -gui -t ns work.rom_bench_e
+# vsim -gui -t ns work.rom_bench_e 
+# Start time: 09:37:17 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rom_bench_e(rom_bench_a)
+# Loading work.counter_e(counter_a)
+# Loading work.rom_e(rom_a)
+add wave -position insertpoint  \
+sim:/rom_bench_e/T_CLK \
+sim:/rom_bench_e/T_RST \
+sim:/rom_bench_e/T_addr \
+sim:/rom_bench_e/T_data
+restart 
+run 300 ns
+# Compile of rom.vhd was successful.
+restart
+# Loading work.rom_bench_e(rom_bench_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of alu.vhd was successful.
+# Compile of mux.vhd was successful.
+# Compile of reg.vhd was successful.
+# Compile of FSM.vhd was successful.
+# Compile of counter.vhd was successful.
+# Compile of rom.vhd was successful.
+# Compile of uProc_V1.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+# Compile of FSM.vhd was successful.
+# Compile of uProc_V1.vhd was successful.
+quit -sim
+# End time: 09:42:46 on Dec 15,2025, Elapsed time: 0:05:29
+# Errors: 0, Warnings: 0
+vsim -gui -t ns work.bench_v1_e
+# vsim -gui -t ns work.bench_v1_e 
+# Start time: 09:43:04 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench_v1_e(bench_v1_a)
+# Loading work.register_e(register_a)
+# Loading work.fsm_e(fsm_a)
+# Loading work.alu_e(alu_a)
+# Loading work.mux_e(mux_a)
+restart
+add wave -position insertpoint  \
+sim:/bench_v1_e/FSM/current_state
+add wave -position insertpoint  \
+sim:/bench_v1_e/T_CLK
+add wave -position insertpoint  \
+sim:/bench_v1_e/ComonBus
+add wave -position insertpoint  \
+sim:/bench_v1_e/R0_Q \
+sim:/bench_v1_e/R1_Q \
+sim:/bench_v1_e/R2_Q \
+sim:/bench_v1_e/R3_Q \
+sim:/bench_v1_e/R4_Q \
+sim:/bench_v1_e/R5_Q \
+sim:/bench_v1_e/R6_Q \
+sim:/bench_v1_e/R7_Q
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+quit -sim
+# End time: 09:51:57 on Dec 15,2025, Elapsed time: 0:08:53
+# Errors: 0, Warnings: 0
+# Load canceled
+# Load canceled
+# Compile of uProc_V2.vhd was successful.
+vsim -gui -t ns work.bench_v2_e
+# vsim -gui -t ns work.bench_v2_e 
+# Start time: 09:53:10 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.register_e(register_a)
+# Loading work.fsm_e(fsm_a)
+# Loading work.alu_e(alu_a)
+# Loading work.mux_e(mux_a)
+# Loading work.counter_e(counter_a)
+# Loading work.rom_e(rom_a)
+add wave -position insertpoint  \
+sim:/bench_v2_e/FSM/current_state
+add wave -position insertpoint  \
+sim:/bench_v2_e/T_CLK
+add wave -position insertpoint  \
+sim:/bench_v2_e/DIN
+add wave -position insertpoint  \
+sim:/bench_v2_e/ComonBus
+add wave -position insertpoint  \
+sim:/bench_v2_e/R0_Q \
+sim:/bench_v2_e/R1_Q \
+sim:/bench_v2_e/R2_Q \
+sim:/bench_v2_e/R3_Q \
+sim:/bench_v2_e/R4_Q \
+sim:/bench_v2_e/R5_Q \
+sim:/bench_v2_e/R6_Q \
+sim:/bench_v2_e/R7_Q
+restart 
+run 300 ns
+add wave -position insertpoint  \
+sim:/bench_v2_e/T_addr
+restart
+run 300 ns
+add wave -position insertpoint  \
+sim:/bench_v2_e/MUX_SEL
+restart
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of rom.vhd failed with 2 errors.
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of counter.vhd was successful.
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.counter_e(counter_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 300 ns
+restart
+run 400 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 400 ns
+# Compile of uProc_V2.vhd failed with 2 errors.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+run 400 ns
+# Compile of rom.vhd was successful.
+# Compile of uProc_V2.vhd was successful.
+restart
+# Loading work.bench_v2_e(bench_v2_a)
+# Loading work.rom_e(rom_a)
+run 400 ns
+run -step
+quit -sim
+# End time: 11:05:01 on Dec 15,2025, Elapsed time: 1:11:51
+# Errors: 0, Warnings: 0
+# Load canceled
+vsim -gui -t ns work.bench_v1_e
+# vsim -gui -t ns work.bench_v1_e 
+# Start time: 11:06:04 on Dec 15,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.bench_v1_e(bench_v1_a)
+# Loading work.register_e(register_a)
+# Loading work.fsm_e(fsm_a)
+# Loading work.alu_e(alu_a)
+# Loading work.mux_e(mux_a)
+# Loading work.counter_e(counter_a)
+# Loading work.rom_e(rom_a)
+add wave -position insertpoint  \
+sim:/bench_v1_e/R0_Q \
+sim:/bench_v1_e/R1_Q \
+sim:/bench_v1_e/R2_Q \
+sim:/bench_v1_e/R3_Q \
+sim:/bench_v1_e/R4_Q \
+sim:/bench_v1_e/R5_Q \
+sim:/bench_v1_e/R6_Q \
+sim:/bench_v1_e/R7_Q
+add wave -position insertpoint  \
+sim:/bench_v1_e/T_CLK
+add wave -position insertpoint  \
+sim:/bench_v1_e/DIN
+add wave -position insertpoint  \
+sim:/bench_v1_e/ComonBus
+restart 
+run 300 ns
+# Compile of uProc_V1.vhd was successful.
+restart
+# Loading work.bench_v1_e(bench_v1_a)
+run 300 ns
+# Compile of PC.vhd failed with 1 errors.
+# Compile of uProc_V1.vhd was successful.
+# Compile of PC.vhd failed with 1 errors.
+# Compile of PC.vhd failed with 1 errors.
+# Compile of PC.vhd failed with 1 errors.
+# Compile of PC.vhd failed with 3 errors.
+# Compile of PC.vhd failed with 2 errors.
+# Compile of PC.vhd failed with 3 errors.
+# Compile of PC.vhd failed with 3 errors.
+# End time: 11:57:27 on Dec 15,2025, Elapsed time: 0:51:23
+# Errors: 0, Warnings: 0
