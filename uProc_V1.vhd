@@ -82,7 +82,7 @@ begin
 		B"001111000" after 127 ns,  	-- reg_7 = DIN
 		B"000111001" after 147 ns,  	-- mov : reg_7 = reg_0
 		B"010110010" after 167 ns,  	-- add : reg_6 = reg_6 + reg_2
-		B"011101011" after 207 ns;  	-- add : reg_5 = reg_5 - reg_3
+		B"011101011" after 207 ns;  	-- sub : reg_5 = reg_5 - reg_3
 		
 	T_CLK <= not(T_CLK) after 5 ns;
 

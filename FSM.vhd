@@ -19,6 +19,8 @@ architecture FSM_a of FSM_e is
 	procedure RegInSelect (	constant  Rin : in integer;
 				signal R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out : out std_logic) is 
 		BEGIN
+		-- /!\ since it only target the specific register to switch the signal to 1, 
+		-- it is mandatory to reset all signals to prevent multiple register to be enabled at the same time
 		case Rin is 
 			when 0 => R0out <= '1';
 			when 1 => R1out <= '1';
@@ -42,6 +44,7 @@ architecture FSM_a of FSM_e is
 	
 	procedure MuxSelect (	constant Rout, Dout, Gout : in integer;
 				signal SEL : out std_logic_vector(9 downto 0)) is 
+		-- calculate the mux selection vector depending on the inputs argument
 		BEGIN
 		SEL <= B"0000000000";
 		if Dout = 1 then SEL <= B"0000000010";

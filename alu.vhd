@@ -11,19 +11,16 @@ entity alu_e is
 end entity;
 
 architecture alu_a of alu_e is
-
 begin
-	
 	process (A, B)
-	begin
-	if AddSub = '1' then
-		S <= std_logic_vector(signed(A) - signed(B));
-	else
-		S <= std_logic_vector(signed(A) + signed(B));
-	end if;
+		begin
+		if AddSub = '1' then
+			S <= std_logic_vector(signed(A) - signed(B));
+		else
+			S <= std_logic_vector(signed(A) + signed(B));
+		end if;
 	end process;
 end architecture;
-
 
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;

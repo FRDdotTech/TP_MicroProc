@@ -40,11 +40,11 @@ architecture register_bench_a of register_bench_e is
 	end component;
 	
 	signal T_CLK, T_Rin : std_logic:='0';
-	signal T_R : std_logic_vector(8 downto 0):= "101010101";
+	signal T_R : std_logic_vector(8 downto 0):= b"101010101";
 	signal T_Q : std_logic_vector(8 downto 0);
 begin
 	T_CLK	<= not(T_CLK) after 10 ns;
 	T_Rin	<= '1' after 25 ns, '0' after 45 ns, '1' after 65 ns;
-	T_R 	<= "000000000" after 47 ns;
+	T_R 	<= b"000000000" after 47 ns;
 	result	: entity work.register_e(register_a) port map(T_CLK, T_Rin, T_R, T_Q);
 end architecture;
