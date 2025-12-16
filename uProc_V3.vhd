@@ -129,6 +129,6 @@ begin
 -- V3 specific	
 	PC	: entity work.PC_e(PC_a) port map(T_CLK, R7_in, PC_En, ComonBus, PC_addr);
 	ADDR_Reg: entity work.register_e(register_a) port map(T_CLK, ADDRin, ComonBus, ADDR);
-	DOUT_Reg: entity work.register_e(register_a) port map(T_CLK, ADDRin, ComonBus, ADDR);
+	DOUT_Reg: entity work.register_e(register_a) port map(T_CLK, DOUTin, ComonBus, DOUT);
 	SRAM	: entity work.sram_e(sram_a) port map(T_CLK, W_D, ADDR(6 downto 0), DOUT, DIN);
 end architecture;

@@ -22,8 +22,8 @@ architecture sram_a of sram_e is
 		b"001100000",	-- movi
 		b"001101000",	-- movi
 		b"001110000",	-- movi
-		b"001111000",	-- movi
-		b"000111001",	-- mov
+		b"000000000",
+		b"000101001",	-- mov
 		b"010110010",	-- add
 		b"010110010",	
 		b"011101011",	-- sub
@@ -199,5 +199,5 @@ begin
 	T_WR	<= '1' after 163 ns, '0' after 168 ns;
 	T_Rin 	<= '1' after 173 ns, '0' after 178 ns;
 	cnt	: entity work.PC_e(PC_a) port map(T_CLK, T_Rin, T_En, T_In, T_addr);
-	rom	: entity work.sram_e(sram_a) port map(T_CLK, T_WR, T_addr(6 downto 0), T_Dout, T_Q);
+	sram	: entity work.sram_e(sram_a) port map(T_CLK, T_WR, T_addr(6 downto 0), T_Dout, T_Q);
 end architecture;

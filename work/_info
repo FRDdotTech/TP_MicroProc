@@ -273,7 +273,7 @@ R21
 R12
 R13
 Ebench_v3_e
-Z40 w1765814425
+Z40 w1765885739
 R1
 R2
 R3
@@ -286,9 +286,9 @@ V??l]<A]0XTza12Q`n[_eZ1
 !s100 [4b8[;aFz_^8?jXz`BHGV2
 R7
 32
-Z43 !s110 1765814561
+Z43 !s110 1765885744
 !i10b 1
-Z44 !s108 1765814561.000000
+Z44 !s108 1765885744.000000
 Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/uProc_V3.vhd|
 Z46 !s107 U:/TP_VHDL/TP_MicroProc/uProc_V3.vhd|
 !i113 1
@@ -304,11 +304,11 @@ R26
 R1
 R2
 R3
-Z50 DEx4 work 10 bench_v3_e 0 22 ??l]<A]0XTza12Q`n[_eZ1
+DEx4 work 10 bench_v3_e 0 22 ??l]<A]0XTza12Q`n[_eZ1
 l107
 L13
-Z51 V_2e52U=BPUBQ`UUQPO[2>2
-Z52 !s100 X=IicFlRZdz7?SFNKf5_=2
+VjQj9[WPSCo8nLXLDdlPm`0
+!s100 hZ0>Z3<hn^?CQbKDmWgee2
 R7
 32
 R43
@@ -320,13 +320,13 @@ R46
 R12
 R13
 Ecounter_bench_e
-Z53 w1765790917
+Z50 w1765790917
 R1
 R2
 R3
 R4
-Z54 8U:/TP_VHDL/TP_MicroProc/counter.vhd
-Z55 FU:/TP_VHDL/TP_MicroProc/counter.vhd
+Z51 8U:/TP_VHDL/TP_MicroProc/counter.vhd
+Z52 FU:/TP_VHDL/TP_MicroProc/counter.vhd
 l0
 L43
 VmQB5UzKAgVFL1[_6fdEzR3
@@ -336,8 +336,8 @@ R7
 R18
 !i10b 1
 R19
-Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/counter.vhd|
-Z57 !s107 U:/TP_VHDL/TP_MicroProc/counter.vhd|
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/counter.vhd|
+Z54 !s107 U:/TP_VHDL/TP_MicroProc/counter.vhd|
 !i113 1
 R12
 R13
@@ -356,19 +356,19 @@ R7
 R18
 !i10b 1
 R19
-R56
-R57
+R53
+R54
 !i113 1
 R12
 R13
 Ecounter_e
-R53
+R50
 R1
 R2
 R3
 R4
-R54
-R55
+R51
+R52
 l0
 L6
 VH:P_]X8O?K:NKFKUab__92
@@ -378,8 +378,8 @@ R7
 R18
 !i10b 1
 R19
-R56
-R57
+R53
+R54
 !i113 1
 R12
 R13
@@ -397,8 +397,8 @@ R7
 R18
 !i10b 1
 R19
-R56
-R57
+R53
+R54
 !i113 1
 R12
 R13
@@ -444,24 +444,24 @@ R31
 R12
 R13
 Efsmv2_bench_e
-Z58 w1765813091
+Z55 w1765813091
 R1
 R2
 R3
 R4
-Z59 8U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd
-Z60 FU:/TP_VHDL/TP_MicroProc/FSM_V2.vhd
+Z56 8U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd
+Z57 FU:/TP_VHDL/TP_MicroProc/FSM_V2.vhd
 l0
 L165
 Vz>`;OG4XK2`>NCPD^k1X_2
 !s100 3k`3MeGS_h341N`]jjdE@2
 R7
 32
-R43
+Z58 !s110 1765814561
 !i10b 1
-R44
-Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd|
-Z62 !s107 U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd|
+Z59 !s108 1765814561.000000
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd|
+Z61 !s107 U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd|
 !i113 1
 R12
 R13
@@ -477,33 +477,33 @@ VZOmMKm[D_[z1_<?K[FN;i3
 !s100 g]:i8V0Jl@fW6jZ5TW=B]1
 R7
 32
-R43
+R58
 !i10b 1
-R44
+R59
+R60
 R61
-R62
 !i113 1
 R12
 R13
 Efsmv2_e
-R58
+R55
 R1
 R2
 R3
 R4
-R59
-R60
+R56
+R57
 l0
 L6
 VMUmD_DFOd_4eEJ@IG5D1m1
 !s100 aVcB;X79oaH3IHoFdFd7m3
 R7
 32
-R43
+R58
 !i10b 1
-R44
+R59
+R60
 R61
-R62
 !i113 1
 R12
 R13
@@ -518,22 +518,22 @@ V0a8DamK3OShN9=`]Dn9OR2
 !s100 0T[i_dF:?nDEfIg4c1GK[0
 R7
 32
-R43
+R58
 !i10b 1
-R44
+R59
+R60
 R61
-R62
 !i113 1
 R12
 R13
 Emux_bench_e
-Z63 w1765444631
+Z62 w1765444631
 R1
 R2
 R3
 R4
-Z64 8U:/TP_VHDL/TP_MicroProc/mux.vhd
-Z65 FU:/TP_VHDL/TP_MicroProc/mux.vhd
+Z63 8U:/TP_VHDL/TP_MicroProc/mux.vhd
+Z64 FU:/TP_VHDL/TP_MicroProc/mux.vhd
 l0
 L38
 V=oE2Q0o6>5jmU^n>8K5SU0
@@ -543,8 +543,8 @@ R7
 R8
 !i10b 1
 R9
-Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/mux.vhd|
-Z67 !s107 U:/TP_VHDL/TP_MicroProc/mux.vhd|
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/mux.vhd|
+Z66 !s107 U:/TP_VHDL/TP_MicroProc/mux.vhd|
 !i113 1
 R12
 R13
@@ -563,19 +563,19 @@ R7
 R8
 !i10b 1
 R9
+R65
 R66
-R67
 !i113 1
 R12
 R13
 Emux_e
-R63
+R62
 R1
 R2
 R3
 R4
+R63
 R64
-R65
 l0
 L6
 Va2ai5REhL<3YYDQ^I9>M92
@@ -585,8 +585,8 @@ R7
 R8
 !i10b 1
 R9
+R65
 R66
-R67
 !i113 1
 R12
 R13
@@ -604,19 +604,19 @@ R7
 R8
 !i10b 1
 R9
+R65
 R66
-R67
 !i113 1
 R12
 R13
 Epc_bench_e
-Z68 w1765809101
+Z67 w1765809101
 R1
 R2
 R3
 R4
-Z69 8U:/TP_VHDL/TP_MicroProc/PC.vhd
-Z70 FU:/TP_VHDL/TP_MicroProc/PC.vhd
+Z68 8U:/TP_VHDL/TP_MicroProc/PC.vhd
+Z69 FU:/TP_VHDL/TP_MicroProc/PC.vhd
 l0
 L40
 VETTjWCD3e3En:QSl:Id@C0
@@ -626,8 +626,8 @@ R7
 R18
 !i10b 1
 R19
-Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/PC.vhd|
-Z72 !s107 U:/TP_VHDL/TP_MicroProc/PC.vhd|
+Z70 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/PC.vhd|
+Z71 !s107 U:/TP_VHDL/TP_MicroProc/PC.vhd|
 !i113 1
 R12
 R13
@@ -646,19 +646,19 @@ R7
 R18
 !i10b 1
 R19
+R70
 R71
-R72
 !i113 1
 R12
 R13
 Epc_e
-R68
+R67
 R1
 R2
 R3
 R4
+R68
 R69
-R70
 l0
 L7
 VjdZcOknT>72e?K@7C=dH52
@@ -668,8 +668,8 @@ R7
 R18
 !i10b 1
 R19
+R70
 R71
-R72
 !i113 1
 R12
 R13
@@ -687,19 +687,19 @@ R7
 R18
 !i10b 1
 R19
+R70
 R71
-R72
 !i113 1
 R12
 R13
 Eregister_bench_e
-Z73 w1765528844
+Z72 w1765528844
 R1
 R2
 R3
 R4
-Z74 8U:/TP_VHDL/TP_MicroProc/reg.vhd
-Z75 FU:/TP_VHDL/TP_MicroProc/reg.vhd
+Z73 8U:/TP_VHDL/TP_MicroProc/reg.vhd
+Z74 FU:/TP_VHDL/TP_MicroProc/reg.vhd
 l0
 L30
 VPz>m0LjB5I4J9:4[hi3na2
@@ -709,8 +709,8 @@ R7
 R8
 !i10b 1
 R9
-Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/reg.vhd|
-Z77 !s107 U:/TP_VHDL/TP_MicroProc/reg.vhd|
+Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/reg.vhd|
+Z76 !s107 U:/TP_VHDL/TP_MicroProc/reg.vhd|
 !i113 1
 R12
 R13
@@ -729,19 +729,19 @@ R7
 R8
 !i10b 1
 R9
+R75
 R76
-R77
 !i113 1
 R12
 R13
 Eregister_e
-R73
+R72
 R1
 R2
 R3
 R4
+R73
 R74
-R75
 l0
 L5
 V[ASD6i?8iO[SkYJ7`72<B2
@@ -751,8 +751,8 @@ R7
 R8
 !i10b 1
 R9
+R75
 R76
-R77
 !i113 1
 R12
 R13
@@ -770,19 +770,19 @@ R7
 R8
 !i10b 1
 R9
+R75
 R76
-R77
 !i113 1
 R12
 R13
 Erom_bench_e
-Z78 w1765791255
+Z77 w1765791255
 R1
 R2
 R3
 R4
-Z79 8U:/TP_VHDL/TP_MicroProc/rom.vhd
-Z80 FU:/TP_VHDL/TP_MicroProc/rom.vhd
+Z78 8U:/TP_VHDL/TP_MicroProc/rom.vhd
+Z79 FU:/TP_VHDL/TP_MicroProc/rom.vhd
 l0
 L74
 VzNWHCbh5LL4Q2>oU^hzG?3
@@ -792,8 +792,8 @@ R7
 R18
 !i10b 1
 R19
-Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/rom.vhd|
-Z82 !s107 U:/TP_VHDL/TP_MicroProc/rom.vhd|
+Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/rom.vhd|
+Z81 !s107 U:/TP_VHDL/TP_MicroProc/rom.vhd|
 !i113 1
 R12
 R13
@@ -813,19 +813,19 @@ R7
 R18
 !i10b 1
 R19
+R80
 R81
-R82
 !i113 1
 R12
 R13
 Erom_e
-R78
+R77
 R1
 R2
 R3
 R4
+R78
 R79
-R80
 l0
 L6
 VD=T^UJl=CJ=M7aYbYXScW0
@@ -835,8 +835,8 @@ R7
 R18
 !i10b 1
 R19
+R80
 R81
-R82
 !i113 1
 R12
 R13
@@ -854,30 +854,30 @@ R7
 R18
 !i10b 1
 R19
+R80
 R81
-R82
 !i113 1
 R12
 R13
 Esram_bench_e
-Z83 w1765813193
+Z82 w1765885925
 R1
 R2
 R3
 R4
-Z84 8U:/TP_VHDL/TP_MicroProc/SRAM.vhd
-Z85 FU:/TP_VHDL/TP_MicroProc/SRAM.vhd
+Z83 8U:/TP_VHDL/TP_MicroProc/SRAM.vhd
+Z84 FU:/TP_VHDL/TP_MicroProc/SRAM.vhd
 l0
 L170
 VbjbCizLGAZNL7jGQ=[<bz0
 !s100 n5Vb:oaIHAAB64oG2aQ`B2
 R7
 32
-R43
+Z85 !s110 1765885956
 !i10b 1
-R44
-Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/SRAM.vhd|
-Z87 !s107 U:/TP_VHDL/TP_MicroProc/SRAM.vhd|
+Z86 !s108 1765885956.000000
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|U:/TP_VHDL/TP_MicroProc/SRAM.vhd|
+Z88 !s107 U:/TP_VHDL/TP_MicroProc/SRAM.vhd|
 !i113 1
 R12
 R13
@@ -887,40 +887,40 @@ R48
 R1
 R2
 R3
-DEx4 work 12 sram_bench_e 0 22 bjbCizLGAZNL7jGQ=[<bz0
+Z89 DEx4 work 12 sram_bench_e 0 22 bjbCizLGAZNL7jGQ=[<bz0
 l197
 L173
-VG=URLg[IOXTRa;QF6DO=K1
-!s100 l8z;0lnkRA^Hhm_DVC^XL0
+Z90 VG=URLg[IOXTRa;QF6DO=K1
+Z91 !s100 l8z;0lnkRA^Hhm_DVC^XL0
 R7
 32
-R43
+R85
 !i10b 1
-R44
 R86
 R87
+R88
 !i113 1
 R12
 R13
 Esram_e
-R83
+R82
 R1
 R2
 R3
 R4
+R83
 R84
-R85
 l0
 L7
 VJ14[c47TPG=8O2aWhDFY30
 !s100 _lnLN<WLz^X[kUfdnRiRo0
 R7
 32
-R43
+R85
 !i10b 1
-R44
 R86
 R87
+R88
 !i113 1
 R12
 R13
@@ -931,15 +931,15 @@ R3
 R47
 l150
 L16
-VNN3PO=aG;DH`iz@P?]8SM1
-!s100 ^O67heiFk_E26]9MQ<^LA3
+VCHzo=Q6[V3L?>gl0LoZ7g1
+!s100 1db2DOG:XTC@BC3ViaHC[1
 R7
 32
-R43
+R85
 !i10b 1
-R44
 R86
 R87
+R88
 !i113 1
 R12
 R13

@@ -89,18 +89,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling architecture mux_bench_a of mux_bench_e
 -- Loading entity mux_e
 
-} {} {}} U:/TP_VHDL/TP_MicroProc/PC.vhd {1 {vcom -work work -2002 -explicit -stats=none U:/TP_VHDL/TP_MicroProc/PC.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity PC_e
--- Compiling architecture PC_a of PC_e
--- Compiling entity PC_bench_e
--- Compiling architecture PC_bench_a of PC_bench_e
--- Loading entity PC_e
-
 } {} {}} U:/TP_VHDL/TP_MicroProc/SRAM.vhd {1 {vcom -work work -2002 -explicit -stats=none U:/TP_VHDL/TP_MicroProc/SRAM.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -113,6 +101,18 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling architecture sram_bench_a of sram_bench_e
 -- Loading entity PC_e
 -- Loading entity sram_e
+
+} {} {}} U:/TP_VHDL/TP_MicroProc/PC.vhd {1 {vcom -work work -2002 -explicit -stats=none U:/TP_VHDL/TP_MicroProc/PC.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity PC_e
+-- Compiling architecture PC_a of PC_e
+-- Compiling entity PC_bench_e
+-- Compiling architecture PC_bench_a of PC_bench_e
+-- Loading entity PC_e
 
 } {} {}} U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd {1 {vcom -work work -2002 -explicit -stats=none U:/TP_VHDL/TP_MicroProc/FSM_V2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
