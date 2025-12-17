@@ -50,11 +50,18 @@ architecture rom_a of rom_e is
 	
 	
 begin
+	
 	process (CLK)
+		variable prev_addr :  std_logic_vector(4 downto 0):= b"00000";
 	begin
-		if rising_edge (CLK) then
-			data <= mem(to_integer(unsigned(addr)));	
+	if rising_edge (CLK) then
+		if prev_addr = addr then
+			data <= mem(to_integer(unsigned(addr)));
+		else
+			prev_addr := addr;
 		end if;
+	
+	end if;
 	end process;
 end architecture;
 

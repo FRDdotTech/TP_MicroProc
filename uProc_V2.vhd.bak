@@ -7,10 +7,10 @@ USE IEEE.std_logic_1164.all;
 USE IEEE.numeric_std.all;
 
 
-entity bench_V2_e is 
+entity bench_2_e is 
 end entity;
 
-architecture bench_Version2_a of bench_V2_e is 
+architecture bench_2_a of bench_2_e is 
 --
 --
 --	FSM

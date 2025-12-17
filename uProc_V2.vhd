@@ -101,7 +101,6 @@ architecture bench_2_a of bench_2_e is
 
 
 begin
-	T_RST <= '1' after 1 ns, '0' after 13 ns;
 	T_CLK <= not(T_CLK) after 5 ns;
 
 --
