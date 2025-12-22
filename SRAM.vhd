@@ -17,20 +17,20 @@ architecture sram_a of sram_e is
 	type mem_t is array (0 to 127) of std_logic_vector(8 downto 0);
 	signal mem : mem_t := (
 		b"001001000",	-- movi
+		b"000000001",
 		b"001010000",	-- movi
+		b"000000010",
 		b"001011000",	-- movi
+		b"000000011",
 		b"001100000",	-- movi
+		b"000000100",
 		b"001101000",	-- movi
+		b"000000101",
 		b"001110000",	-- movi
-		b"000000000",
+		b"000000110",
 		b"000101001",	-- mov
 		b"010110010",	-- add
-		b"011101011",	-- sub
-		b"000000000",	
-		b"000000000",
-		b"000000000",
-		b"000000000",
-		b"000000000",
+		b"011101011",	-- sub	
 		b"000000000",
 		b"000000000",
 		b"000000000",
@@ -149,12 +149,11 @@ architecture sram_a of sram_e is
 	
 begin
 	process (CLK)
-		variable prev_addr :  std_logic_vector(6 downto 0):= b"0000000";
 	begin
 	if rising_edge (CLK) then
-		if WR = '1' then
+		if WR = '1' then	-- write data in memory
 			mem(to_integer(unsigned(addr))) <= data;
-		else
+		else	-- send instruction to DIN
 			Q <= mem(to_integer(unsigned(addr)));
 		end if;
 	end if;
