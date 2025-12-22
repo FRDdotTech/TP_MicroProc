@@ -148,7 +148,6 @@ architecture sram_a of sram_e is
 	
 	
 begin
-	
 	process (CLK)
 		variable prev_addr :  std_logic_vector(6 downto 0):= b"0000000";
 	begin

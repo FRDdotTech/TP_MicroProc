@@ -15,14 +15,13 @@ end entity;
 architecture PC_a of PC_e is
 
 begin
-	
 	process (CLK)
 		variable prescaler : integer:=2 - 1;
 		variable count : integer:=0;
 	begin
 	if rising_edge(CLK) and En = '1' then
 		if Rin = '1' then
-			count := to_integer(unsigned(PCin(8 downto 0)));
+			count := to_integer(unsigned(PCin));
 		end if;
 		if count = 127 then count := 0;
 		else count := count + 1;
